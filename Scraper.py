@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 import requests, csv, time
-import pandas as pd
-
+from Nav_Functions import *
 
 # user agent 
 HEADERS = ({'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0', 'Accept-Language': 'en-US, en;q=0.5'})
@@ -38,9 +37,9 @@ def scrape_product_details(category_url):
       
     print(f"Scraped: {category_url}")
     
-    else:
-      time.sleep(5)
-      scrape_product_details(category_url) 
+  else:
+    time.sleep(5)
+    scrape_product_details(category_url) 
 
 
 def scrape_audible_best_sellers(base_url):
