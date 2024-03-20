@@ -30,10 +30,12 @@ def scrape_product_details(category_url):
       rating = get_rating(product)
       num_ratings = string_to_integer(get_review_count(product))
       
-      # Storing the product information into the csv file 
-      with open('audible_best_sellers.csv', mode='a', encoding='utf-8', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow([book_name, author, rating, num_ratings, price, img_url])
+      
+      if is_book_name_unique(book_name):
+        # Storing the product information into the csv file 
+        with open('audible_best_sellers.csv', mode='a', encoding='utf-8', newline='') as file:
+          writer = csv.writer(file)
+          writer.writerow([book_name, author, rating, num_ratings, price, img_url])
       
     print(f"Scraped: {category_url}")
     

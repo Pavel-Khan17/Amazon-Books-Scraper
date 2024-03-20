@@ -1,5 +1,5 @@
 """ Functions that are use to Navigating Html Content """
-
+import csv
 
 """Function to extract Product Name""" 
 def get_title(product):
@@ -64,3 +64,16 @@ def string_to_integer(s):
   except ValueError:
     # Handle cases where the string contains non-numeric characters
     return None
+
+
+"""Function to check if a book name already exists in the CSV file"""
+def is_book_name_unique(book_name):
+  try:
+    with open('audible_best_sellers.csv', mode='r', encoding='utf-8') as file:
+      reader = csv.reader(file)
+      for row in reader:
+        if row[0] == book_name:
+          return False
+  except FileNotFoundError:
+    return True  # File does not exist, so the book name is unique
+  return True
