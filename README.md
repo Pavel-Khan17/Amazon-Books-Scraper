@@ -17,7 +17,7 @@ This Python script scrapes the Amazon Audible Best Sellers website to extract in
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your_username/audible-best-sellers-scraper.git
+    git clone https://github.com/Pavel-Khan17/Amazon-Books-Scraper.git
     ```
 
 2. Install the required dependencies:
